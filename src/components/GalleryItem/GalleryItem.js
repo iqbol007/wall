@@ -70,7 +70,7 @@ export default function GalleryItem({ item }) {
           <div className="item">
             <img
               className="item"
-              src={`${process.env.REACT_APP_MEDIA_URL}/${item.name}`}
+              src={`${process.env.production.REACT_APP_MEDIA_URL}/${item.name}`}
               alt="x"
             />
             <button className="abs-pos" onClick={handleRemove} ref={delBtnref}>
@@ -78,7 +78,7 @@ export default function GalleryItem({ item }) {
             </button>
             <a
               className="abs-pos"
-              href={`${process.env.REACT_APP_MEDIA_URL}/${item.name}`}
+              href={`${process.env.production.REACT_APP_MEDIA_URL}/${item.name}`}
             >
               DOWNLOAD
             </a>
@@ -95,14 +95,14 @@ export default function GalleryItem({ item }) {
           <div className="item rel-pos">
             <img
               className="item"
-              src={`${process.env.REACT_APP_MEDIA_URL}/${item.name}`}
+              src={`${process.env.production.REACT_APP_MEDIA_URL}/${item.name}`}
               alt="x"
             />
             <button className="abs-pos" onClick={handleRemove} ref={delBtnref}>
               x
             </button>
 
-            <a href={`${process.env.REACT_APP_MEDIA_URL}/${item.name}`}>
+            <a href={`${process.env.production.REACT_APP_MEDIA_URL}/${item.name}`}>
               DOWNLOAD
             </a>
           </div>
@@ -149,7 +149,7 @@ export default function GalleryItem({ item }) {
             <video className="item" controls>
               <source
                 ref={mediaRef}
-                src={`${process.env.REACT_APP_MEDIA_URL}/${item.name}`}
+                src={`${process.env.production.REACT_APP_MEDIA_URL}/${item.name}`}
               />
             </video>
             <button className="btn-play" onClick={handlePlay}>
@@ -173,7 +173,7 @@ export default function GalleryItem({ item }) {
         >
           <div className="item rel-pos">
             <video className="item" ref={mediaRef}>
-              <source src={`${process.env.REACT_APP_MEDIA_URL}/${item.name}`} />
+              <source src={`${process.env.production.REACT_APP_MEDIA_URL}/${item.name}`} />
             </video>
             <button className="btn-play" onClick={handlePlay}>
               Play
@@ -196,7 +196,7 @@ export default function GalleryItem({ item }) {
         >
           <div className="item rel-pos">
             <video className="item" ref={mediaRef}>
-              <source src={`${process.env.REACT_APP_MEDIA_URL}/${item.name}`} />
+              <source src={`${process.env.production.REACT_APP_MEDIA_URL}/${item.name}`} />
             </video>
             <button className="btn-play" onClick={handlePlay}>
               Play
@@ -211,7 +211,7 @@ export default function GalleryItem({ item }) {
             >
               x
             </button>
-            <a href={`${process.env.REACT_APP_MEDIA_URL}/${item.name}`}>
+            <a href={`${process.env.production.REACT_APP_MEDIA_URL}/${item.name}`}>
               DOWNLOAD
             </a>
           </div>
