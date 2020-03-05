@@ -6,7 +6,7 @@ import styles from "./GalleryAddItemForm.module.css";
 export default function GalleryAddItemForm() {
   const dispatch = useDispatch();
   const fileRef = useRef(null);
-  const { loading, error } = useSelector(state => state.gallery.edit);
+  const { loading } = useSelector(state => state.gallery.edit);
   const handleSubmit = evt => {
     evt.preventDefault();
   };
