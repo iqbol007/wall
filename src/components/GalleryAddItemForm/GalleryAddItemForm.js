@@ -1,13 +1,12 @@
 import React, { useRef } from "react";
-import { useDispatch  } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { galleryItemUpload } from "../../actions/actionCreators";
 import styles from "./GalleryAddItemForm.module.css";
 
 export default function GalleryAddItemForm() {
- 
   const dispatch = useDispatch();
   const fileRef = useRef(null);
-
+  const { loading, error } = useSelector(state => state.gallery.edit);
   const handleSubmit = evt => {
     evt.preventDefault();
   };
@@ -35,6 +34,7 @@ export default function GalleryAddItemForm() {
     <>
       <form onSubmit={handleSubmit} className={styles.form}>
         <h1>Select file</h1>
+       
         <input
           ref={fileRef}
           onChange={handleFileChange}
@@ -45,7 +45,11 @@ export default function GalleryAddItemForm() {
         <input className={styles.select} type="text" ref={valref} />
         <button className={styles.select} onClick={handleSelect}>
           Select file
-        </button>
+        </button> {loading && (
+          <div class="spinner-border text-dark" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        )}
       </form>
     </>
   );
